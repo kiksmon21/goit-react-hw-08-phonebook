@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { SharedLayout } from 'pages/SharedLayout/SharedLayout';
-import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
-import { LoginPage } from 'pages/LoginPage/LoginPage';
-import { ContactsPage } from 'pages/ContactsPage/ContactsPage';
+import { SharedLayout } from '../pages/SharedLayout';
+import { RegisterPage } from '../pages/RegisterPage';
+import { LoginPage } from '../pages/LoginPage';
+import { ContactsPage } from '../pages/ContactsPage/ContactsPage';
 import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
-import { HomePage } from 'pages/HomePage/HomePage';
+import { HomePage } from '../pages/HomePage/HomePage';
 import { useAuth } from '../redux/hooks/useAuth';
 import { refreshUser } from '../redux/auth/authOperations';
+import { Loader } from './Loader/Loader';
 
 export const App = () => {
     const dispatch = useDispatch();
@@ -19,11 +20,11 @@ export const App = () => {
 
     useEffect(() => {
         dispatch(refreshUser());
-        navigate('/contacts');
+        // navigate('/contacts');
     }, [dispatch, navigate]);
 
     return isRefreshing ? (
-        <h1>Refreshing user... Please wait...</h1>
+        <Loader />
     ) : (
         <>
             <Routes>

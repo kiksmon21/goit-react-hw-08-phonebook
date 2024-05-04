@@ -12,7 +12,7 @@ import {
 import { ContactForm } from '../../components/ContactForm/ContactForm';
 import { Filter } from '../../components/Filter/Filter';
 import { ContactList } from '../../components/ContactList/ContactList';
-import { Loading } from 'notiflix';
+import { Loader } from '../../components/Loader/Loader';
 
 import style from './ContactsPage.module.css';
 
@@ -47,9 +47,7 @@ export const ContactsPage = () => {
 
         <h2 className={style.contact__title}>Contacts</h2>
         <Filter filter={filter} setFilter={handleSetFilter} />
-        {isLoading && (
-          <Loading />
-        )}
+        {isLoading && <Loader />}
         {error && <b>Error: {error}</b>}
         {visibleContacts && (
           <ContactList

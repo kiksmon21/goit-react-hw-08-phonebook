@@ -1,5 +1,6 @@
 .nav {
-  max-width: 768px;
+  max-width: auto;
+  background-color: #146C94;
 }
 
 .navlink {
@@ -8,9 +9,27 @@
   padding: 18px;
   font-weight: 700;
   font-size: 18px;
-  color: #4419c6;
+  color: #AFD3E2;
+}
+
+.navlink:hover {
+  color: #FFF;
 }
 
 .navlink.active {
   color: #e84a5f;
+}
+
+.nav_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+
+.user {
+  margin: 0;
+  padding: 18px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #AFD3E2;
 }

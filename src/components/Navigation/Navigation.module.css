@@ -1,0 +1,16 @@
+.nav {
+  max-width: 768px;
+}
+
+.navlink {
+  display: inline-block;
+  text-decoration: none;
+  padding: 18px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #4419c6;
+}
+
+.navlink.active {
+  color: #e84a5f;
+}
